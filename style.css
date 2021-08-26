@@ -1,3 +1,4 @@
+  /* || General page styles */
   html{
       height: 100%;
   }
@@ -10,6 +11,11 @@
     padding: 0;
     }
 
+ /* || header */
+  header{
+    position: relative;
+  }
+
   .left{
     position: absolute;
     left: 0;
@@ -17,6 +23,7 @@
     height: 60px;
     padding-left: 24px;
     text-align: center;
+    z-index: 1;
   }
 
   .left a{
@@ -39,11 +46,13 @@
     top: 0;
     height: 60px;
     padding-right: 24px;
+    text-align: center;
+    z-index: 1;
   }
 
   .right a{
     margin-left: 32px;
-    margin-top: 19px;
+    margin-top: 18px;
     display: inline-block;
     position: relative;
     color: #222;
@@ -51,7 +60,7 @@
     font: 13px/23px Arial,sans-serif;
   }
 
-  .right a:hover{
+  .right .signin:hover{
     background-color: #315efb;
   }
 
@@ -61,10 +70,10 @@
     height: 24px;
     width: 48px;
     line-height: 24px;
-    text-align: center;
     border-radius: 6px;
   }
 
+ /* || main page contents */
   main{
     width: auto;
     position: relative;
@@ -78,15 +87,24 @@
     width: 654px;
     height: 100%;
     margin: 0 auto;
+    position: relative;
   }
 
-  .head_wrapper a img {
+  .head_wrapper img {
     width: 270px;
     height: 129px;
-    margin-top: 42px;
+    bottom: 15px ;
+    position: absolute;
+    left: 50%;
+    margin-left: -135px;
     outline: none;
     text-align: center;
     list-style: none;
+    z-index: 1;
+  }
+
+  .form_wrapper{
+    height: 100%;
   }
 
   .wrap{
@@ -99,7 +117,6 @@
 
   form{
     position: relative; /*让main form .click的绝对定位元素的相对位置元素为form*/
-    height: 44px;
     margin: 0;
     padding: 0;
   }
@@ -128,13 +145,11 @@
   }
 
   main form .click{
-    display: inline-block;
+    display: inline-block; /*这里inlineblock没起到作用，必须用position: absolute+top:0才把百度一下移上去，没搞懂*/
     width: 108px;
     height: 44px;
-    vertical-align: top;
-    position: absolute; 
+    position: absolute;  
     top: 0;
-
   }
 
   #search{
@@ -151,6 +166,11 @@
     font-weight: 400;
     border: none;
     outline: 0;
+    line-height: 44px; /*行高和height相同，自然居中了*/
+  }
+
+  #search:hover{
+    background-color: #315efb;
   }
 
   aside{
@@ -171,22 +191,32 @@
     margin: auto;
     display: block;
   }
-  
+
+  /* || footer */
   footer{
     position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
     line-height: 39px;
+    padding-top: 1px;
   }
 
   footer p{
+    margin: 0;
+    padding: 0;
     list-style: none;
     display: inline;
     margin-right: 20px;
   }
 
+  footer p:last-child{
+    margin-left: -2px;
+    margin-right: 0;
+  }
+
   footer p a{
     color: #bbb;
+    text-decoration: none;
   }
 
